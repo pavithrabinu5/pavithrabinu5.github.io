@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavithra Binu — AI/ML Engineer & UI/UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafaf8;
+      --cream: #f5f2ed;
+      --gray: #888;
+      --light-gray: #e8e5e0;
+      --script: 'Cormorant Garamond', serif;
+      --body: 'DM Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 60px;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    nav .brand {
+      font-family: var(--script);
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav ul a {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    nav ul a:hover {
+      opacity: 0.4;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 140px 40px 100px;
+      position: relative;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 28px;
+      font-weight: 500;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--script);
+      font-size: clamp(5rem, 12vw, 11rem);
+      font-weight: 300;
+      line-height: 0.88;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      animation: fadeUp 0.8s 0.1s ease both;
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 400;
+      border-top: 1px solid var(--light-gray);
+      padding-top: 20px;
+      margin-top: 4px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .badge {
+      border: 1px solid var(--black);
+      padding: 8px 20px;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: default;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .badge:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ── HERO BUTTONS — new design ── */
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 44px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    /* Button 1: solid black pill with arrow */
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      border: 1.5px solid var(--black);
+    }
+
+    .hero-btn-primary:hover {
+      background: #222;
+      transform: translateY(-2px);
+    }
+
+    .hero-btn-primary .btn-arrow {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      transition: transform 0.25s;
+    }
+
+    .hero-btn-primary:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Button 2: ghost underline style */
+    .hero-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--black);
+      padding: 16px 8px;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+      border: none;
+      transition: opacity 0.2s;
+    }
+
+    .hero-btn-secondary::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--black);
+      transform: scaleX(0.4);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-btn-secondary:hover::after {
+      transform: scaleX(1);
+    }
+
+    .hero-btn-secondary:hover {
+      opacity: 0.6;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      animation: fadeUp 0.8s 0.6s ease both;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: var(--gray);
+      animation: scrollLine 1.6s ease infinite;
+    }
+
+    @keyframes scrollLine {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    section {
+      padding: 120px 60px;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 60px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: var(--light-gray);
+    }
+
+    .script-heading {
+      font-family: var(--script);
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      margin-bottom: 48px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-card {
+      background: var(--black);
+      color: var(--white);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: 'PB';
+      font-family: var(--script);
+      font-size: 8rem;
+      font-style: italic;
+      font-weight: 300;
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      opacity: 0.08;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .about-card h3 {
+      font-family: var(--script);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 6px;
+    }
+
+    .about-card .title-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .about-card p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .about-card .edu-block {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .about-card .edu-block span {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 8px;
+    }
+
+    .about-card .edu-block strong {
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .about-card .edu-block em {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      font-style: normal;
+    }
+
+    .about-right p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .skill-tag {
+      border: 1px solid var(--light-gray);
+      padding: 6px 14px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience {
+      background: var(--white);
+    }
+
+    .exp-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .exp-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .exp-meta .company {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .exp-meta .date {
+      font-size: 0.72rem;
+      color: var(--gray);
+    }
+
+    .exp-content h3 {
+      font-family: var(--script);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .exp-content ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .exp-content ul li {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: #555;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+
+    .exp-content ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray);
+      font-size: 0.75rem;
+    }
+
+    /* ── PROJECTS ── */
+    #projects {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    #projects .section-label {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    #projects .section-label::after {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #projects .script-heading {
+      color: var(--white);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #111;
+      transition: background 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card::before {
+      content: attr(data-num);
+      font-family: var(--script);
+      font-size: 7rem;
+      font-style: italic;
+      font-weight: 300;
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      opacity: 0.05;
+      color: var(--white);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .project-card:hover {
+      background: #1a1a1a;
+    }
+
+    /* Photo upload slot */
+    .proj-photo {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+      background: #0d0d0d;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .proj-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: opacity 0.3s, transform 0.5s;
+      display: block;
+    }
+
+    .project-card:hover .proj-photo img {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+
+    .proj-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+    }
+
+    .proj-photo-placeholder:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .proj-photo-placeholder svg {
+      opacity: 0.2;
+    }
+
+    .proj-photo-placeholder span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.2);
+      font-weight: 400;
+    }
+
+    .proj-photo input[type="file"] {
+      display: none;
+    }
+
+    .project-body {
+      padding: 48px 44px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .stack-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 4px 10px;
+    }
+
+    .project-card h3 {
+      font-family: var(--script);
+      font-size: 1.7rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .project-card p {
+      font-size: 0.84rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .project-card .metric {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+      width: 100%;
+    }
+
+    .project-card .metric strong {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-right: 6px;
+    }
+
+    .perf-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .perf-table th {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      font-weight: 500;
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .perf-table td {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.55);
+      padding: 6px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-weight: 300;
+    }
+
+    .perf-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications {
+      background: var(--cream);
+    }
+
+    .certs-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light-gray);
+    }
+
+    .cert-item {
+      background: var(--cream);
+      padding: 28px 32px;
+      transition: background 0.2s;
+    }
+
+    .cert-item:hover {
+      background: var(--white);
+    }
+
+    .cert-item .issuer {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .cert-item h4 {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 140px 60px;
+    }
+
+    #contact .script-heading {
+      color: var(--white);
+      font-size: clamp(4rem, 9vw, 9rem);
+      margin-bottom: 24px;
+    }
+
+    #contact p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.45);
+      max-width: 420px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-block;
+      padding: 14px 36px;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .contact-link.primary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .contact-link.primary:hover {
+      background: transparent;
+      color: var(--white);
+      outline: 1px solid var(--white);
+    }
+
+    .contact-link.secondary {
+      color: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-link.secondary:hover {
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      color: rgba(255, 255, 255, 0.2);
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer span:last-child {
+      font-family: var(--script);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav {
+        padding: 18px 28px;
+      }
+
+      nav ul {
+        gap: 24px;
+      }
+
+      section {
+        padding: 80px 28px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        display: none;
+      }
+
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="brand">Pavithra Binu</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-eyebrow">AI/ML Engineer &nbsp;·&nbsp; UI/UX Designer &nbsp;·&nbsp; Computer Science</p>
+    <h1 class="hero-title">
+      <em>Port</em>folio
+    </h1>
+    <p class="hero-sub">Pavithra Binu &nbsp;—&nbsp; 2026</p>
+    <div class="hero-badges">
+      <span class="badge">Deep Learning</span>
+      <span class="badge">NLP &amp; Computer Vision</span>
+      <span class="badge">UI / UX Design</span>
+      <span class="badge">Full-Stack Dev</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="hero-btn-primary">
+        View My Work
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#contact" class="hero-btn-secondary">
+        Get In Touch
+      </a>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-label">About me</div>
+        <div class="about-card">
+          <h3>Pavithra Binu</h3>
+          <p class="title-tag">AI/ML Engineer &amp; UI/UX Designer</p>
+          <p>Computer Science undergraduate and active ML Intern across two concurrent roles, building production-grade
+            deep learning systems and user-centered interfaces from the ground up.</p>
+          <div class="edu-block">
+            <span>Education</span>
+            <strong>BSc Computer Science</strong>
+            <em>University of West London, RAK, UAE &nbsp;·&nbsp; 2024–2027</em>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="script-heading">About<br><em style="font-style:italic">me</em></div>
+        <p>I engineer intelligent systems at the intersection of machine learning and human-centered design. My work
+          spans the full model lifecycle — from data preprocessing and feature engineering through architecture
+          selection, training, evaluation, and deployment — as well as the design systems that make those systems
+          accessible and usable.</p>
+        <p>Currently contributing to industry-grade ML pipelines as an active intern at two organisations
+          simultaneously, while completing my BSc in Computer Science. My technical stack covers PyTorch, TensorFlow,
+          Scikit-learn, FastAPI, and React, complemented by deep experience in Figma-driven UX design and responsive
+          front-end development.</p>
+        <div class="skills-tags">
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">OpenAI API</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="exp-grid">
+      <div class="section-label">Experience</div>
+      <div class="script-heading">Work</div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="company">GAOTek Inc.</p>
+          <p class="date">Feb 2026 – Present<br>Remote, UAE</p>
+        </div>
+        <div class="exp-content">
+          <h3>UI/UX Designer</h3>
+          <ul>
+            <li>Architected end-to-end design systems in Figma — from low-fidelity wireframes to pixel-perfect
+              high-fidelity prototypes — systematically improving user flow efficiency and visual consistency across
+              multi-platform web products.</li>
+            <li>Applied responsive design engineering principles to produce cross-device experiences with zero layout
+              regression across desktop, tablet, and mobile breakpoints.</li>
+            <li>Operated within an agile design workflow, managing concurrent design iterations and delivering
+              production-ready assets under strict deadlines while upholding rigorous functional and aesthetic
+              standards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="company">Future Interns</p>
+          <p class="date">Mar 2026 – Present<br>Remote, UAE</p>
+        </div>
+        <div class="exp-content">
+          <h3>Machine Learning Intern</h3>
+          <ul>
+            <li>Designed and trained supervised ML models on structured datasets using Python, TensorFlow, and
+              Scikit-learn, generating business-grade predictive insights with measurable accuracy improvements.</li>
+            <li>Engineered robust preprocessing pipelines encompassing data cleaning, feature extraction, normalisation,
+              and stratified evaluation protocols to ensure model reliability on real-world data distributions.</li>
+            <li>Delivered applied deep learning and supervised learning solutions aligned with industry use cases as
+              part of a structured AI fellowship programme.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="company">CodeAlpha</p>
+          <p class="date">Mar 2026 – Present<br>Remote, UAE</p>
+        </div>
+        <div class="exp-content">
+          <h3>Machine Learning Intern</h3>
+          <ul>
+            <li>Built modular Python-based ML pipelines using Scikit-learn and data analysis libraries to automate
+              insight extraction from structured datasets across diverse problem domains.</li>
+            <li>Systematically improved model performance through iterative feature engineering, hyperparameter tuning,
+              and cross-validated evaluation on benchmark datasets.</li>
+            <li>Delivered fully documented, end-to-end ML project implementations — covering algorithm design, training,
+              evaluation, and deployment — within a collaborative, remote engineering environment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Selected Projects</div>
+    <div class="script-heading">Work</div>
+    <div class="projects-grid">
+
+      <!-- 01 -->
+      <div class="project-card" data-num="01">
+        <div class="proj-photo">
+          <img src="images/project1.jpeg" alt="Milo — Real-Time Meeting Intelligence Agent">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Whisper</span><span class="stack-tag">LLaMA</span>
+            <span class="stack-tag">Next.js</span><span class="stack-tag">Docker</span>
+          </div>
+          <h3>Milo — Real-Time Meeting Intelligence Agent</h3>
+          <p>Production-grade AI meeting intelligence system delivering live transcription and structured insight
+            extraction — action items, decisions, discussion threads, and per-speaker sentiment — via a LLaMA-based LLM
+            inference pipeline. Engineered a low-latency streaming architecture with FastAPI WebSockets and PostgreSQL,
+            exposing a Next.js analytics dashboard for live transcript review.</p>
+          <span class="metric"><strong>~400ms</strong> end-to-end inference latency per audio segment</span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="project-card" data-num="02">
+        <div class="proj-photo">
+          <img src="images/project2.jpeg" alt="Brain Tumor MRI Multi-Class Classifier">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">PyTorch</span><span class="stack-tag">Transfer Learning</span>
+            <span class="stack-tag">Grad-CAM</span><span class="stack-tag">Gradio</span>
+          </div>
+          <h3>Brain Tumor MRI Multi-Class Classifier</h3>
+          <p>Medical imaging classifier conducting a rigorous backbone comparison — EfficientNet, ResNet-50, and Vision
+            Transformer — using PyTorch transfer learning on multi-class MRI datasets. Integrated Grad-CAM saliency
+            visualisation to surface clinically interpretable activation heatmaps, and packaged the model as an
+            end-to-end deployable Gradio inference interface.</p>
+          <span class="metric"><strong>97%</strong> test accuracy &nbsp;·&nbsp; <strong>0.97–0.99</strong> macro AUC-ROC
+            across all classes</span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="project-card" data-num="03">
+        <div class="proj-photo">
+          <img src="images/project3.jpeg" alt="Strata Forecast — Retail Demand Forecasting Platform">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Python</span><span class="stack-tag">Pandas</span>
+            <span class="stack-tag">Scikit-learn</span><span class="stack-tag">Random Forest</span>
+            <span class="stack-tag">Time Series</span>
+          </div>
+          <h3>Strata Forecast — Retail Demand Forecasting Platform</h3>
+          <p>End-to-end ML forecasting platform engineered to process 3M+ historical retail transactions across 54
+            stores, generating product-level 6-month demand projections. Feature engineering incorporated lagged sales
+            signals, rolling statistics, and seasonality decomposition. Serialised model artifacts support live
+            deployment, and an interactive analytics dashboard surfaces trend and anomaly insights for business
+            stakeholders.</p>
+          <span class="metric"><strong>84.7%</strong> prediction accuracy &nbsp;·&nbsp; MAPE 15.3% &nbsp;·&nbsp; 3M+
+            records processed</span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="project-card" data-num="04">
+        <div class="proj-photo">
+          <img src="images/project4.jpeg" alt="IntelliTicket — Automated Support Ticket Triage">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Python</span><span class="stack-tag">NLP</span>
+            <span class="stack-tag">TF-IDF</span><span class="stack-tag">Scikit-learn</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <h3>IntelliTicket — Automated Support Ticket Triage</h3>
+          <p>Production NLP system eliminating manual support ticket triage via dual-output text classification:
+            concurrent category prediction and urgency-based priority routing. Implemented a TF-IDF vectorisation
+            pipeline with text preprocessing (tokenisation, stopword removal, lemmatisation) and dual Logistic
+            Regression heads. Benchmarked against Random Forest, Naive Bayes, and LinearSVC via 5-fold stratified
+            cross-validation; deployed as an interactive Streamlit application with live inference and confidence
+            scoring.</p>
+          <span class="metric"><strong>100%</strong> accuracy &nbsp;·&nbsp; F1-score <strong>1.0</strong> on held-out
+            test set of 2,000 annotated tickets</span>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="project-card" data-num="05">
+        <div class="proj-photo">
+          <img src="images/project5.jpeg" alt="Resume Screening System">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Python</span><span class="stack-tag">Scikit-learn</span>
+            <span class="stack-tag">TF-IDF</span><span class="stack-tag">Cosine Similarity</span>
+            <span class="stack-tag">Streamlit</span>
+          </div>
+          <h3>Resume Screening System — Automated Candidate Ranking</h3>
+          <p>NLP-driven candidate screening system replacing manual CV review with a deterministic two-signal composite
+            scoring model. Signal one computes TF-IDF cosine similarity between parsed resume text and a target job
+            description. Signal two applies a weighted skill matching function, where core competencies contribute
+            disproportionately to the final score (Final Score = 0.5 × TF-IDF + 0.5 × Weighted Skill Score). Outputs a
+            ranked candidate leaderboard, per-candidate skill gap analysis, and supports both PDF and plain-text
+            ingestion via an interactive Streamlit dashboard.</p>
+          <span class="metric"><strong>2-signal</strong> composite scoring &nbsp;·&nbsp; PDF &amp; TXT ingestion
+            &nbsp;·&nbsp; Skill gap analysis per candidate</span>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="project-card" data-num="06">
+        <div class="proj-photo">
+          <img src="images/project6.png" alt="Emotion Recognition from Speech">
+        </div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Deep Learning</span><span class="stack-tag">CNN-BiLSTM</span>
+            <span class="stack-tag">Attention</span><span class="stack-tag">RAVDESS</span>
+            <span class="stack-tag">TESS</span>
+          </div>
+          <h3>Emotion Recognition from Speech</h3>
+          <p>Deep learning pipeline for paralinguistic emotion classification from raw audio, employing a hybrid
+            CNN-BiLSTM architecture augmented with multi-head attention. The CNN layers extract local spectro-temporal
+            features from MFCCs; the BiLSTM captures long-range temporal dependencies; and the attention mechanism
+            dynamically weights emotionally salient time steps. Trained to convergence over 69 epochs with early
+            stopping across 8 emotion classes on the RAVDESS and TESS benchmark corpora.</p>
+          <table class="perf-table">
+            <tr>
+              <th>Metric</th>
+              <th>Score</th>
+              <th>Metric</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td>Test Accuracy</td>
+              <td>86.01%</td>
+              <td>Macro F1</td>
+              <td>0.85</td>
+            </tr>
+            <tr>
+              <td>Val Accuracy</td>
+              <td>82.55%</td>
+              <td>Train/Val Gap</td>
+              <td>~6.5%</td>
+            </tr>
+          </table>
+          <span class="metric"><strong>86%</strong> test accuracy &nbsp;·&nbsp; <strong>0.85</strong> macro F1
+            &nbsp;·&nbsp; <strong>8</strong> emotion classes</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="certs-container">
+      <div class="section-label">Credentials</div>
+      <div class="script-heading">Certifications</div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Career Essentials in Generative AI (Professional Certificate)</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Career Essentials in GitHub (Professional Certificate)</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">Dubai Future Foundation · 2026</p>
+          <h4>One Million Prompters — AI Prompt Engineering</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Getting Started as a Full-Stack Web Developer</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>OpenAI Realtime API: Building Voice Agents with Realtime API &amp; Agents SDK</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>DevOps Foundations</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Practical GitHub Actions</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Practical GitHub Project Management &amp; Collaboration</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>CSS Essential Training</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Practical GitHub Code Search</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>Learning Microsoft 365 Copilot for Work</h4>
+        </div>
+        <div class="cert-item">
+          <p class="issuer">LinkedIn Learning · 2026</p>
+          <h4>What Is Generative AI?</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.25)">Get in touch</div>
+    <div class="script-heading">Work<br>with me</div>
+    <p>Open to AI/ML engineering roles, research collaborations, UI/UX design projects, and internship opportunities.
+      Let's build something impactful together.</p>
+    <div class="contact-links">
+      <a href="/cdn-cgi/l/email-protection#11617067786579637073787f6420202451767c70787d3f727e7c"
+        class="contact-link primary"><span class="__cf_email__"
+          data-cfemail="fc8c9d8a9588948e9d9e959289cdcdc9bc9b919d9590d29f9391">[pavithrabinu115@gmail.com&#160;]</span></a>
+      <a href="https://www.linkedin.com/in/pavithra-binu-55446a3a9/" target="_blank"
+        class="contact-link secondary">LinkedIn</a>
+      <a href="tel:+971506023437" class="contact-link secondary">+971 50-602-3437</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Pavithra Binu</span>
+    <span>Pavithra Binu</span>
+  </footer>
