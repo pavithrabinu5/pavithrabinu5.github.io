@@ -34,6 +34,12 @@
   nav ul { list-style: none; display: flex; gap: 40px; align-items: center; }
   nav ul a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); text-decoration: none; font-weight: 500; transition: opacity 0.2s; }
   nav ul a:hover { opacity: 0.4; }
+  nav .nav-github {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--black); text-decoration: none; font-weight: 500;
+    transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 6px;
+  }
+  nav .nav-github:hover { opacity: 0.4; }
   nav .nav-cv {
     font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
     font-weight: 500; color: var(--white); text-decoration: none;
@@ -294,6 +300,10 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://github.com/pavithrabinu5" target="_blank" class="nav-github">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a></li>
     <li><a href="Pavithra_Binu_Resume.pdf" download class="nav-cv"><span class="cv-icon">↓</span> Download CV</a></li>
   </ul>
 </nav>
@@ -331,7 +341,7 @@
       <div class="about-card">
         <h3>Pavithra Binu</h3>
         <p class="title-tag">AI/ML Engineer &amp; UI/UX Designer</p>
-        <p>Computer Science undergraduate and active ML Intern across two concurrent roles, building production-grade deep learning systems and user-centered interfaces from the ground up.</p>
+        <p>Computer Science undergraduate and active intern across four concurrent roles — spanning AI/ML engineering, UI/UX design, and digital marketing — building production-grade systems and user-centered interfaces from the ground up.</p>
         <div class="edu-block">
           <span>Education</span>
           <strong>BSc Computer Science</strong>
@@ -342,7 +352,7 @@
     <div class="about-right">
       <div class="script-heading">About<br><em style="font-style:italic">me</em></div>
       <p>I engineer intelligent systems at the intersection of machine learning and human-centered design. My work spans the full model lifecycle — from data preprocessing and feature engineering through architecture selection, training, evaluation, and deployment — as well as the design systems that make those systems accessible and usable.</p>
-      <p>Currently contributing to industry-grade ML pipelines as an active intern at two organisations simultaneously, while completing my BSc in Computer Science. My technical stack covers PyTorch, TensorFlow, Scikit-learn, FastAPI, and React, complemented by deep experience in Figma-driven UX design and responsive front-end development.</p>
+      <p>Currently contributing across four active roles simultaneously — AI/ML engineering internships at Future Interns and CodeAlpha, UI/UX design and Digital Marketing at GAOTek — while completing my BSc in Computer Science. My technical stack covers PyTorch, TensorFlow, Scikit-learn, FastAPI, and React, complemented by deep experience in Figma-driven UX design and responsive front-end development.</p>
       <div class="skills-tags">
         <span class="skill-tag">PyTorch</span>
         <span class="skill-tag">TensorFlow</span>
@@ -411,6 +421,21 @@
           <li>Built modular Python-based ML pipelines using Scikit-learn and data analysis libraries to automate insight extraction from structured datasets across diverse problem domains.</li>
           <li>Systematically improved model performance through iterative feature engineering, hyperparameter tuning, and cross-validated evaluation on benchmark datasets.</li>
           <li>Delivered fully documented, end-to-end ML project implementations — covering algorithm design, training, evaluation, and deployment — within a collaborative, remote engineering environment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="company">GAOTek Inc.</p>
+        <p class="date">Mar 2026 – Present<br>Remote, UAE</p>
+      </div>
+      <div class="exp-content">
+        <h3>Digital Marketing Intern</h3>
+        <ul>
+          <li>Designed and executed data-driven digital marketing campaigns across multiple platforms to measurably increase online visibility, audience reach, and engagement metrics.</li>
+          <li>Conducted systematic market research and competitor analysis to surface actionable trends, informing evidence-based marketing strategy and content positioning decisions.</li>
+          <li>Produced and optimised multi-format content for social media and digital channels — including copy, visuals, and campaign assets — to drive brand growth and improve campaign performance KPIs.</li>
         </ul>
       </div>
     </div>
@@ -562,11 +587,15 @@
   <div class="contact-links">
     <a href="mailto:pavithrabinu115@gmail.com" class="contact-link primary">pavithrabinu115@gmail.com</a>
     <a href="https://www.linkedin.com/in/pavithra-binu-55446a3a9/" target="_blank" class="contact-link secondary">LinkedIn</a>
+    <a href="https://github.com/pavithrabinu5" target="_blank" class="contact-link secondary">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="display:inline;vertical-align:middle;margin-right:5px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
+    </a>
     <a href="Pavithra_Binu_Resume.pdf" download class="contact-link cv-download">↓ Download CV</a>
   </div>
 </section>
-
 <footer>
   <span>© 2026 Pavithra Binu</span>
   <span>Pavithra Binu</span>
 </footer>
+</body>
+</html>
