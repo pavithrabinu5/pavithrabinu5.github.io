@@ -240,6 +240,62 @@
   .perf-table td { font-size: 0.75rem; color: rgba(255,255,255,0.55); padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 300; }
   .perf-table tr:last-child td { border-bottom: none; }
 
+  /* ── STATS STRIP ── */
+  #stats-strip {
+    background: var(--cream); padding: 64px 60px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; max-width: 100%;
+  }
+  .stat-block {
+    padding: 40px 44px; background: var(--cream);
+    border-right: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  .stat-block:last-child { border-right: none; }
+  .stat-block strong {
+    display: block; font-family: var(--script); font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300; font-style: italic; color: var(--black); line-height: 1; margin-bottom: 10px;
+  }
+  .stat-block span {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gray); font-weight: 400;
+  }
+
+  /* ── WHAT I OFFER ── */
+  #services { background: #1a1816; padding: 120px 60px; }
+  #services .section-label { color: rgba(255,255,255,0.3); }
+  #services .section-label::after { background: rgba(255,255,255,0.1); }
+  #services .script-heading { color: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; max-width: 1100px; margin: 0 auto;
+  }
+  .service-card {
+    background: #111; padding: 48px 40px;
+    transition: background 0.25s; cursor: default;
+    position: relative; overflow: hidden;
+    border-bottom: 2px solid transparent; transition: all 0.25s;
+  }
+  .service-card:hover { background: #1e1c1a; border-bottom-color: rgba(255,255,255,0.3); }
+  .service-card .s-num {
+    font-family: var(--script); font-size: 5rem; font-style: italic; font-weight: 300;
+    color: rgba(255,255,255,0.22); line-height: 1; display: block; margin-bottom: 16px;
+  }
+  .service-card h3 {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 500; color: var(--white); margin-bottom: 16px;
+  }
+  .service-card p {
+    font-size: 0.85rem; line-height: 1.85; color: rgba(255,255,255,0.55); font-weight: 300;
+  }
+  .service-card .s-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+  .service-card .s-tag {
+    font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.12); padding: 4px 10px;
+    color: rgba(255,255,255,0.4); transition: all 0.2s;
+  }
+  .service-card:hover .s-tag { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+
   /* ── CERTIFICATIONS ── */
   #certifications { background: var(--cream); }
   .certs-container { max-width: 1100px; margin: 0 auto; }
@@ -551,6 +607,74 @@
           <tr><td>Val Accuracy</td><td>82.55%</td><td>Train/Val Gap</td><td>~6.5%</td></tr>
         </table>
         <span class="metric"><strong>86%</strong> test accuracy &nbsp;·&nbsp; <strong>0.85</strong> macro F1 &nbsp;·&nbsp; <strong>8</strong> emotion classes</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div id="stats-strip">
+  <div class="stat-block">
+    <strong>4</strong>
+    <span>Active Roles</span>
+  </div>
+  <div class="stat-block">
+    <strong>6+</strong>
+    <span>AI/ML Projects</span>
+  </div>
+  <div class="stat-block">
+    <strong>12+</strong>
+    <span>Certifications</span>
+  </div>
+  <div class="stat-block">
+    <strong>100%</strong>
+    <span>Best Model Accuracy</span>
+  </div>
+</div>
+
+<!-- WHAT I OFFER -->
+<section id="services">
+  <div class="section-label">Expertise</div>
+  <div class="script-heading">What I Offer</div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="s-num">01</span>
+      <h3>UI/UX Design</h3>
+      <p>End-to-end interface design — from user research and wireframing through pixel-perfect high-fidelity Figma prototypes. Focused on usability, visual consistency, and seamless cross-device experiences across web and mobile platforms.</p>
+      <div class="s-tags">
+        <span class="s-tag">Figma</span>
+        <span class="s-tag">Wireframing</span>
+        <span class="s-tag">Prototyping</span>
+        <span class="s-tag">Responsive Design</span>
+        <span class="s-tag">User Research</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="s-num">02</span>
+      <h3>AI / ML Engineering</h3>
+      <p>Production-grade machine learning pipelines covering the full model lifecycle — data preprocessing, feature engineering, architecture design, training, evaluation, and deployment — with clean, interpretable, and scalable outputs.</p>
+      <div class="s-tags">
+        <span class="s-tag">PyTorch</span>
+        <span class="s-tag">TensorFlow</span>
+        <span class="s-tag">NLP</span>
+        <span class="s-tag">Computer Vision</span>
+        <span class="s-tag">Deep Learning</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="s-num">03</span>
+      <h3>Full-Stack Development</h3>
+      <p>Building responsive, performant web applications using modern frameworks — React, Next.js, FastAPI — with clean architecture, REST API integration, and deployment-ready infrastructure using Docker and GitHub Actions.</p>
+      <div class="s-tags">
+        <span class="s-tag">React.js</span>
+        <span class="s-tag">Next.js</span>
+        <span class="s-tag">FastAPI</span>
+        <span class="s-tag">Python</span>
+        <span class="s-tag">Docker</span>
       </div>
     </div>
 
